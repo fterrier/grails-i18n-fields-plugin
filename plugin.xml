@@ -1,23 +1,26 @@
-<plugin name='i18n-fields' version='0.7-SNAPSHOT' grailsVersion='1.3 &gt; *'>
+<plugin name='i18n-fields' version='0.6.1-CHAI' grailsVersion='1.3 &gt; *'>
   <author>Jorge Uriarte</author>
   <authorEmail>jorge.uriarte@omelas.net</authorEmail>
   <title>i18n Fields</title>
   <description>This plugin provides an easy way of declarativily localize database fields of your content tables.</description>
   <documentation>http://grails.org/plugin/i18n-fields</documentation>
+  <type>I18nFieldsGrailsPlugin</type>
   <resources>
-    <resource>BuildConfig</resource>
-    <resource>Config</resource>
-    <resource>DataSource</resource>
-    <resource>UrlMappings</resource>
     <resource>i18nfields.TestController</resource>
-    <resource>i18nfields.Ego</resource>
-    <resource>i18nfields.Literal</resource>
-    <resource>i18nfields.LiteralService</resource>
     <resource>i18nfields.TestService</resource>
     <resource>i18nfields.TestTagLib</resource>
   </resources>
+  <repositories>
+    <repository name='grailsCentral' url='http://grails.org/plugins' />
+    <repository name='http://repo.grails.org/grails/core' url='http://repo.grails.org/grails/core/' />
+    <repository name='mavenCentral' url='http://repo1.maven.org/maven2/' />
+  </repositories>
   <dependencies>
-    <plugin name='yammerMetrics' version='0.2-SNAPSHOT' />
+    <test>
+      <dependency group='org.gmock' name='gmock' version='0.8.1' />
+    </test>
   </dependencies>
+  <plugins />
+  <runtimePluginRequirements />
   <behavior />
 </plugin>

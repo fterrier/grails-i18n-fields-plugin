@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+        <name>i18n-fields</name>
+        <comment></comment>
+        <projects>
+        </projects>
+        <buildSpec>
+                <buildCommand>
+                        <name>org.eclipse.jdt.core.javabuilder</name>
+                        <arguments>
+                        </arguments>
+                </buildCommand>
+        </buildSpec>
+        <natures>
+            <nature>com.springsource.sts.grails.core.nature</nature>
+                <nature>org.eclipse.jdt.groovy.core.groovyNature</nature>
+                <nature>org.eclipse.jdt.core.javanature</nature>
+        </natures>
+        <linkedResources>
+	        <link>
+	                <name>.plugin-src-rest-client-builder-1.0.2-src-groovy</name>
+	                <type>2</type>
+	                <locationURI>GRAILS_WORKDIR/projects/i18n-fields/plugins/rest-client-builder-1.0.2/src/groovy</locationURI>
+	        </link>
+	        <link>
+	                <name>.plugin-src-release-2.0.3-src-java</name>
+	                <type>2</type>
+	                <locationURI>GRAILS_WORKDIR/projects/i18n-fields/plugins/release-2.0.3/src/java</locationURI>
+	        </link>
+	        <link>
+	                <name>.plugin-src-release-2.0.3-src-groovy</name>
+	                <type>2</type>
+	                <locationURI>GRAILS_WORKDIR/projects/i18n-fields/plugins/release-2.0.3/src/groovy</locationURI>
+	        </link>
+	        <link>
+	                <name>.plugin-src-code-coverage-1.2.4-grails-app-i18n</name>
+	                <type>2</type>
+	                <locationURI>GRAILS_WORKDIR/projects/i18n-fields/plugins/code-coverage-1.2.4/grails-app/i18n</locationURI>
+	        </link>
+        </linkedResources>
+</projectDescription>

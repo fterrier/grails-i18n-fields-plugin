@@ -5,3 +5,4 @@ tmp/*
 test/projects/demo/target/*
 web-app/images
 web-app/js
+web-app/WEB-INF/classes/

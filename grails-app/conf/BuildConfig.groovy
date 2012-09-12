@@ -6,34 +6,42 @@ coverage {
                  ]
 }
 
+grails.project.class.dir = "target/classes"
+grails.project.test.class.dir = "target/test-classes"
+grails.project.test.reports.dir = "target/test-reports"
+
 grails.project.dependency.resolution = {
-    inherits "global" // inherit Grails' default dependencies
-    log "warn" // log level of Ivy resolver, either 'error',
-               // 'warn', 'info', 'debug' or 'verbose'
+    // inherit Grails' default dependencies
+    inherits("global") {
+        // uncomment to disable ehcache
+        // excludes 'ehcache'
+    }
+    log "warn" // log level of Ivy resolver, either 'error', 'warn', 'info', 'debug' or 'verbose'
     repositories {
-        grailsHome()
         grailsCentral()
-        mavenCentral()
-        mavenRepo "http://snapshots.repository.codehaus.org"
-        mavenRepo "http://repository.codehaus.org"
-        mavenRepo "http://download.java.net/maven/2/"
-        mavenRepo "http://repository.jboss.com/maven2/"
+        // uncomment the below to enable remote dependency resolution
+        // from public Maven repositories
+        //mavenLocal()
+        //mavenCentral()
+        //mavenRepo "http://snapshots.repository.codehaus.org"
+        //mavenRepo "http://repository.codehaus.org"
+        //mavenRepo "http://download.java.net/maven/2/"
+        //mavenRepo "http://repository.jboss.com/maven2/"
     }
     dependencies {
-        runtime 'mysql:mysql-connector-java:5.1.8'
-        compile("net.sf.ehcache:ehcache-web:2.0.3") {
-               excludes "ehcache-core", "xml-apis" // ehcache-core is provided by Grails
-        }
-        runtime 'redis.clients:jedis:2.0.0'
+        // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
+
+        // runtime 'mysql:mysql-connector-java:5.1.18'
+		test ('org.gmock:gmock:0.8.1') {
+			export = false
+		}
     }
+
     plugins {
-        compile (":springcache:1.3.1") {
-          export = false
+        build(":tomcat:$grailsVersion",
+              ":release:2.0.3",
+              ":rest-client-builder:1.0.2") {
+            export = false
         }
-        runtime (":yammer-metrics:0.2-SNAPSHOT") {
-          excludes([ group: 'org.slf4j', name: 'slf4j-api', version: '1.6.4']) 
-          export = true
-        }
-    }    
+    }
 }
-//grails.plugin.location."yammer-metrics"="../grails-yammer-metrics"

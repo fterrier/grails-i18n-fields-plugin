@@ -18,9 +18,5 @@ public @interface I18nFields {
 	static final String CONSTRAINTS = "constraints"
 	static final String LOCALES = "locales"
 	static final String EXTRA_LOCALES = "extraLocales"
-	static final String I18N_FIELDS_TABLE = "i18nFieldsTable"
-	static final String I18N_FIELDS_TABLE_LITERAL= "literal"
-	static final String TEMPSTRINGS = "i18nFieldsTempStrings"
-    static final String CACHESTRINGS = "i18nFieldsCacheStrings"
 }
 

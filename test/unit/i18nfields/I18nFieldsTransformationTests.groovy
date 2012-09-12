@@ -1,13 +1,14 @@
 package i18nfields
 
 import org.junit.Test
+
 import static org.junit.Assert.assertThat
 import static org.hamcrest.CoreMatchers.*
 import static org.junit.matchers.JUnitMatchers.hasItem
 import org.codehaus.groovy.grails.orm.hibernate.GrailsHibernateDomainClassProperty
 import org.codehaus.groovy.grails.orm.hibernate.GrailsHibernateDomainClass
 import java.beans.PropertyDescriptor
-import org.codehaus.groovy.tools.ast.TranformTestHelper
+import org.codehaus.groovy.tools.ast.TransformTestHelper
 import org.codehaus.groovy.control.CompilePhase
 import org.junit.Before
 import org.springframework.context.i18n.LocaleContextHolder
@@ -215,7 +216,7 @@ class I18nFieldsTransformationTests {
 		mockedConfigProvider.ignore.getConfig() { pluginConfiguration }
 		def clazz
 		mockedConfigProvider.use() {
-			TranformTestHelper invoker = new TranformTestHelper(new I18nFieldsTransformation(), CompilePhase.CANONICALIZATION)
+			TransformTestHelper invoker = new TransformTestHelper(new I18nFieldsTransformation(), CompilePhase.CANONICALIZATION)
 			clazz = invoker.parse(new File(filePath))
 		}
 		clazz.metaClass.useTimer = { name, closure -> closure.call() }
