@@ -18,8 +18,12 @@ public class I18nFieldsTransformation implements ASTTransformation {
 	}
 
 	void visit(ASTNode[] astNodes, SourceUnit sourceUnit) {
-		if (!isValidAstNodes(astNodes))
+		println "[i18nFields] Visiting source unit ${sourceUnit.name}"
+		
+		if (!isValidAstNodes(astNodes)) {
+			println "[i18nFields] ASTNode is not valid for source unit: ${sourceUnit.name}"
 			return
+		}
 		checkForDeprecatedConfiguration()
 		ClassI18nalizator internationalizator = new ClassI18nalizator(astNodes[1], locales())
 		internationalizator.transformClass()
@@ -31,6 +35,7 @@ public class I18nFieldsTransformation implements ASTTransformation {
 
 	// TODO: Use log4j
 	private checkForDeprecatedConfiguration() {
+		println "[i18nFields] Checking for deprecated configuration"
 		if (pluginConfig."${I18nFields.I18N_FIELDS}"?.containsKey(I18nFields.DEPRECATED_LOCALES))
 			println "[i18nFields] WARNING - Configuration is using a deprecated locale list definition (i18n_langs). Change it for 'locales' as soon as possible"
 		if (pluginConfig."${I18nFields.I18N_FIELDS}"?.containsKey(I18nFields.DEPRECATED_EXTRA_LOCALES))

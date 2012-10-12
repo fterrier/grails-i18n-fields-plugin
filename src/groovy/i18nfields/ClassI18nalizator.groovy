@@ -33,6 +33,8 @@ class ClassI18nalizator {
 	}
 
 	void transformClass() {
+		println "[i18nFields] Transforming class: ${classNode.name} for locales: ${locales}"
+		
 		configureTransformation()
 		createLocalStructures()
 		addFieldsAndAccessors()
